@@ -30,7 +30,7 @@ export function FileDropzone({ setBackgroundImage }: FileDropzoneProps) {
   });
 
   return (
-    <div className="w-full max-w-md space-y-6 absolute z-10 inset-0 flex flex-col items-center justify-center h-80 m-auto">
+    <div className="w-full max-w-md space-y-6 z-10 inset-0 flex flex-col items-center justify-center m-auto h-[calc(100%-64px)]">
       <div className="space-y-2 text-center">
         <h1 className="text-3xl font-bold">Image Upload</h1>
         <p className="text-muted-foreground">Upload an image to use as background</p>

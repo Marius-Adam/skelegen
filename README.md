@@ -1,6 +1,6 @@
-# Skeleton Draw
+# Skeleton Generator
 
-Skeleton Draw is a creative tool built with React, TypeScript, and Vite that lets you draw animated skeleton loaders on a canvas. Use it to preview, generate code snippets for various UI libraries (MUI, ShadCN, Chakra, Mantine), and quickly prototype your designs.
+Skeleton Generator is a creative tool built with React, TypeScript, and Vite that lets you draw animated skeleton loaders on a canvas. Use it to preview, generate code snippets for various UI libraries (MUI, ShadCN, Chakra, Mantine), and quickly prototype your designs.
 
 ## Features
 

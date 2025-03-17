@@ -3,7 +3,6 @@ import { Stage, Layer, Rect, Circle, Transformer, Line, Group } from "react-konv
 import Konva from "konva";
 import { Shape } from "@/lib/types";
 import { Background } from "./Background";
-import { FileDropzone } from "./FileDropzone";
 
 interface CanvasProps {
   shapes: Shape[];
@@ -75,7 +74,6 @@ export const Canvas: React.FC<CanvasProps> = ({
   setShapes,
   setTool,
   handleUndo,
-  setBackgroundImage,
   currentStep,
   selectedId,
   shapes,
@@ -388,10 +386,9 @@ export const Canvas: React.FC<CanvasProps> = ({
 
   return (
     <div className="relative h-full w-full">
-      {!backgroundImage && <FileDropzone setBackgroundImage={setBackgroundImage} />}
       <Stage
         width={window.innerWidth}
-        height={window.innerHeight}
+        height={window.innerHeight - 48}
         onMouseDown={handleStageMouseDown}
         onMouseMove={handleStageMouseMove}
         onMouseUp={handleStageMouseUp}

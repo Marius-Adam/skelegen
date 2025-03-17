@@ -83,7 +83,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({
             backgroundImage ? "opacity-0 max-w-0" : "opacity-100 max-w-full"
           } overflow-hidden whitespace-nowrap`}
         >
-          SkeletonDraw
+          SkeletonGenerator
         </span>
       </div>
 

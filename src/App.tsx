@@ -4,6 +4,7 @@ import { Canvas } from "@/components/Canvas";
 
 import { Shape, ShapeType } from "@/lib/types";
 import { CodeBlockDialog } from "./components/CodeBlock";
+import { FileDropzone } from "./components/FileDropzone";
 
 const App: React.FC = () => {
   const [tool, setTool] = useState<ShapeType | "select">("select");
@@ -12,7 +13,7 @@ const App: React.FC = () => {
   const [history, setHistory] = useState<Shape[][]>([[]]);
   const [currentStep, setCurrentStep] = useState(0);
   const [backgroundImage, setBackgroundImage] = useState<HTMLImageElement | null>(null);
-  const [showDialog, setShowDialog] = useState(false); 
+  const [showDialog, setShowDialog] = useState(false);
   const [isPreviewing, setIsPreviewing] = useState(false);
 
   const handleUndo = useCallback(() => {
@@ -30,7 +31,7 @@ const App: React.FC = () => {
   }, [currentStep, history, selectedId]);
 
   return (
-    <div>
+    <div className="relative h-full w-full">
       <Toolbar
         setBackgroundImage={setBackgroundImage}
         setTool={setTool}
@@ -44,22 +45,25 @@ const App: React.FC = () => {
         shapes={shapes}
         isPreviewing={isPreviewing}
       />
-      <Canvas
-        selectedId={selectedId}
-        setCurrentStep={setCurrentStep}
-        setHistory={setHistory}
-        setSelectedId={setSelectedId}
-        setShapes={setShapes}
-        setTool={setTool}
-        setBackgroundImage={setBackgroundImage}
-        handleUndo={handleUndo}
-        tool={tool}
-        shapes={shapes}
-        backgroundImage={backgroundImage}
-        currentStep={currentStep}
-        history={history}
-        isPreviewing={isPreviewing}
-      />
+      {!backgroundImage && <FileDropzone setBackgroundImage={setBackgroundImage} />}
+      {backgroundImage && (
+        <Canvas
+          selectedId={selectedId}
+          setCurrentStep={setCurrentStep}
+          setHistory={setHistory}
+          setSelectedId={setSelectedId}
+          setShapes={setShapes}
+          setTool={setTool}
+          setBackgroundImage={setBackgroundImage}
+          handleUndo={handleUndo}
+          tool={tool}
+          shapes={shapes}
+          backgroundImage={backgroundImage}
+          currentStep={currentStep}
+          history={history}
+          isPreviewing={isPreviewing}
+        />
+      )}
       <CodeBlockDialog
         shapes={shapes}
         showDialog={showDialog}
