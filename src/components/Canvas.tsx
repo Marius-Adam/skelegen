@@ -398,7 +398,6 @@ export const Canvas: React.FC<CanvasProps> = ({
         onClick={handleStageClick}
       >
         <Background backgroundImage={isPreviewing ? null : backgroundImage} />
-
         <Layer>
           {isPreviewing ? (
             <Group>
