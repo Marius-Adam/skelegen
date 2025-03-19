@@ -2,7 +2,7 @@
   "name": "skeleton-draw",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://marius-adam.github.io/skeleton-generator/",
+  "homepage": "https://marius-adam.github.io/skelegen",
   "type": "module",
   "scripts": {
     "dev": "vite",
