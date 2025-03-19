@@ -5,7 +5,7 @@ import { defineConfig } from "vite";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/skelegen",
+  base: "/skelegen/",
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
